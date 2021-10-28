@@ -324,7 +324,7 @@ body {
 }
 
 .colors .pink {
-    background-color: var(--pink);
+    background-color: #F87070;
 }
 
 .colors .blue {
@@ -335,9 +335,6 @@ body {
     background-color: var(--purple);
 }
 
-.correct.check::after {
-    content: '✓';
-}
 
 .apply-btn {
     display: flex;
