@@ -12,7 +12,6 @@
     --ffamily-3: 'Space Mono';
     --blue:rgba(112, 243, 248, 1);
     --purple: rgba(216, 129, 248, 1);
-
 }
 
 * {
@@ -335,7 +334,6 @@ body {
     background-color: var(--purple);
 }
 
-
 .apply-btn {
     display: flex;
     justify-content: center;
@@ -356,3 +354,26 @@ body {
     transform: translateY(50%);
     cursor: pointer;
 }
+
+.restart:hover {
+    color: var(--pink);
+    cursor: pointer;
+}
+
+input[type=number] {
+    appearance: none;
+    outline: none;
+    border: none;
+    width: 140px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: var(--third-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--background-clr);
+    display: flex;
+    padding-left: 0.5em;
+}
+
