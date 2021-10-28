@@ -270,14 +270,23 @@ body {
     cursor: pointer;
 }
 
-.first-font {
+.round.act {
     background-color: var(--background-btn-group);
     font-style: normal;
     font-weight: bold;
     font-size: 15px;
     line-height: 15px;
     color: var(--white);
-    font-family: var(--ffamily);
+    opacity: 1;
+}
+
+.first-font {
+    background-color: var(--third-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    color: var(--background-btn-group);
 }
 
 .second-font {
