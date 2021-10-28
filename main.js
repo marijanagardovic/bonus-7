@@ -8,6 +8,10 @@ const fontOne = document.querySelector('.first-font');
 const fontTwo = document.querySelector('.second-font');
 const fontThree = document.querySelector('.third-font');
 const body = document.querySelector('body');
+const colorOne = document.querySelector('.pink');
+const colorTwo = document.querySelector('.blue');
+const colorThree = document.querySelector('.purple');
+const applyBtn = document.querySelector('.apply');
 
 //buttons switch active
 
@@ -62,4 +66,23 @@ fontThree.addEventListener('click', () => {
     body.style.fontFamily = 'Space Mono';
 })
 
+//button apply
+
+applyBtn.addEventListener('click', () => {
+    displaySettings.style.display = 'none';
+})
+
 // changing colors
+
+colorOne.addEventListener('click', () => {
+
+})
+
+colorTwo.addEventListener('click', () => {
+    
+})
+
+colorThree.addEventListener('click', () => {
+    
+})
+
