@@ -14,24 +14,33 @@ const colorThree = document.querySelector('.purple');
 const applyBtn = document.querySelector('.apply');
 const root = document.querySelector('root');
 
+let firstInput = document.querySelector('#input-one');
+const minutesField = document.querySelector('.minutes');
+
+let secondInput = document.querySelector('#input-two');
+let thirdInput = document.querySelector('#input-three');
+
 //buttons switch active
 
 pomodor.addEventListener('click', () => {
     shortBreak.classList.remove('active');
     pomodor.classList.add('active');
     longBreak.classList.remove('active');
+    minutesField.innerHTML = `${firstInput.value}:00`;
 })
 
 shortBreak.addEventListener('click', () =>{
     shortBreak.classList.add('active');
     pomodor.classList.remove('active');
     longBreak.classList.remove('active');
+    minutesField.innerHTML = `${secondInput.value}:00`;
 })
 
 longBreak.addEventListener('click', () => {
     shortBreak.classList.remove('active');
     pomodor.classList.remove('active');
     longBreak.classList.add('active');
+    minutesField.innerHTML = `${thirdInput.value}:00`;
 })
 
 //display settings
@@ -71,7 +80,10 @@ fontThree.addEventListener('click', () => {
 
 applyBtn.addEventListener('click', () => {
     displaySettings.style.display = 'none';
+    minutesField.innerHTML = `${firstInput.value}:00`;
 })
+
+
 
 // changing colors
 
