@@ -4,6 +4,10 @@ const longBreak = document.querySelector ('.long-break');
 const settings = document.querySelector('.settings');
 const iconClose = document.querySelector('.close');
 const displaySettings = document.querySelector('.display-settings');
+const fontOne = document.querySelector('.first-font');
+const fontTwo = document.querySelector('.second-font');
+const fontThree = document.querySelector('.third-font');
+const body = document.querySelector('body');
 
 //buttons switch active
 
@@ -35,3 +39,27 @@ iconClose.addEventListener('click', () => {
     displaySettings.style.display = 'none';
 })
 
+//changing fonts
+
+fontOne.addEventListener('click', () => {
+    fontTwo.classList.remove('act');
+    fontOne.classList.add('act');
+    fontThree.classList.remove('act');
+    body.style.fontFamily = 'Kumbh Sans';
+})
+
+fontTwo.addEventListener('click', () => {
+    fontTwo.classList.add('act');
+    fontOne.classList.remove('act');
+    fontThree.classList.remove('act');
+    body.style.fontFamily = 'Roboto Slab';
+})
+
+fontThree.addEventListener('click', () => {
+    fontTwo.classList.remove('act');
+    fontOne.classList.remove('act');
+    fontThree.classList.add('act');
+    body.style.fontFamily = 'Space Mono';
+})
+
+// changing colors
