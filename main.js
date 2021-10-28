@@ -1,6 +1,9 @@
 const pomodor = document.querySelector('.pomodoro');
 const shortBreak = document.querySelector('.short-break');
 const longBreak = document.querySelector ('.long-break');
+const settings = document.querySelector('.settings');
+const iconClose = document.querySelector('.close');
+const displaySettings = document.querySelector('.display-settings');
 
 //buttons switch active
 
@@ -22,5 +25,13 @@ longBreak.addEventListener('click', () => {
     longBreak.classList.add('active');
 })
 
+//display settings
 
+settings.addEventListener('click', () => {
+    displaySettings.style.display = 'flex';
+})
+
+iconClose.addEventListener('click', () => {
+    displaySettings.style.display = 'none';
+})
 
