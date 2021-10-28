@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@1,300&family=Kumbh+Sans:wght@300;400;500;600;700&family=Manrope:wght@600;800&display=swap');
+:root {
+    --ffamily: 'Kumbh Sans';
+    --background-clr:rgba(30, 33, 63, 1);
+    --title-clr: rgba(215, 224, 255, 1);
+    --background-btn-group: rgba(22, 25, 50, 1);
+    --pink: #F87070;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-clr);
+    font-family: var(--ffamily);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.5em;
+}
+
+.title {
+    color: var(--title-clr);
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.buttons-group {
+    margin-top: 3em;
+    background-color: var(--background-btn-group);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 31.5px;
+    width: 373px;
+    height: 63px;
+}
+
+.buttons-group .btn {
+    padding: 0.5em;
+    margin: 0 0.5em;
+    width: 120px;
+    height: 48px;
+    border-radius: 26.5px;
+    outline: none;
+    border: none;
+    color: var(--title-clr);
+    background-color: var(--background-btn-group);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    mix-blend-mode: normal;
+    opacity: 0.4;
+}
+
+.buttons-group .active {
+    background-color: var(--pink);
+    color: var(--background-clr);
+    opacity: 1;
+}
+
