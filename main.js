@@ -12,6 +12,7 @@ const colorOne = document.querySelector('.pink');
 const colorTwo = document.querySelector('.blue');
 const colorThree = document.querySelector('.purple');
 const applyBtn = document.querySelector('.apply');
+const root = document.querySelector('root');
 
 //buttons switch active
 
@@ -75,14 +76,23 @@ applyBtn.addEventListener('click', () => {
 // changing colors
 
 colorOne.addEventListener('click', () => {
-
+    document.documentElement.style.setProperty('--pink', '#F87070');
+    colorOne.innerHTML = '✓';
+    colorTwo.innerHTML = '';
+    colorThree.innerHTML = '';
 })
 
 colorTwo.addEventListener('click', () => {
-    
+    document.documentElement.style.setProperty('--pink', 'rgba(112, 243, 248, 1)');
+    colorOne.innerHTML = '';
+    colorTwo.innerHTML = '✓';
+    colorThree.innerHTML = '';
 })
 
 colorThree.addEventListener('click', () => {
-    
+    document.documentElement.style.setProperty('--pink', 'rgba(216, 129, 248, 1)');
+    colorOne.innerHTML = '';
+    colorTwo.innerHTML = '';
+    colorThree.innerHTML = '✓';
 })
 
