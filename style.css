@@ -381,13 +381,10 @@ input[type=number] {
     padding-left: 0.5em;
 }
 
-.short, .long {
+.short, .long, .pause, .short-restart, .long-restart {
     display: none;
 }
 
-.short-restart, .long-restart {
-    display: none;
-}
 
 
 @media (max-width: 636px) {
