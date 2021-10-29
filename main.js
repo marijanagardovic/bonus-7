@@ -12,13 +12,12 @@ const colorOne = document.querySelector('.pink');
 const colorTwo = document.querySelector('.blue');
 const colorThree = document.querySelector('.purple');
 const applyBtn = document.querySelector('.apply');
-const root = document.querySelector('root');
 
 let firstInput = document.querySelector('#input-one');
 const minutesField = document.querySelector('.minutes');
-
 let secondInput = document.querySelector('#input-two');
 let thirdInput = document.querySelector('#input-three');
+let restart = document.querySelector('.restart');
 
 //buttons switch active
 
@@ -107,4 +106,33 @@ colorThree.addEventListener('click', () => {
     colorTwo.innerHTML = '';
     colorThree.innerHTML = '✓';
 })
+
+
+//pomodoro counting
+
+let minutes = firstInput.value - 1;
+let seconds = 60;
+
+function countFunc () {
+    setInterval(() => {
+        if(seconds <= 60 && seconds > 00) {
+            seconds = seconds - 1;
+            }
+            if(minutes > 0 && seconds == 0){
+                minutes = minutes - 1;
+                seconds = 59;
+            }
+            if(minutes == 0 && seconds == 0){
+                minutes = 0;
+                seconds = 0;
+                minutesField.innerHTML = `${minutes}0:${seconds}0`;
+            }
+        
+            minutesField.innerHTML = `${minutes}:${seconds}`;
+    },1500);
+
+    restart.innerHTML = 'pause';
+}
+
+restart.addEventListener('click', countFunc);
 
