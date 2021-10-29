@@ -31,7 +31,7 @@ pomodor.addEventListener('click', () => {
     minutesField.style.display = 'flex';
     minutesShort.style.display = 'none';
     minutesLong.style.display = 'none';
-    minutesField.innerHTML = `${firstInput.value}:00`;
+    minutesField.innerHTML = `${firstInput.value < 10 ? '0'+firstInput.value : firstInput.value}:00`;
 })
 
 shortBreak.addEventListener('click', () =>{
@@ -41,7 +41,7 @@ shortBreak.addEventListener('click', () =>{
     minutesField.style.display = 'none';
     minutesShort.style.display = 'flex';
     minutesLong.style.display = 'none';
-    minutesShort.innerHTML = `${secondInput.value}:00`;
+    minutesShort.innerHTML = `${secondInput.value < 10 ? '0'+secondInput.value : secondInput.value}:00`;
 })
 
 longBreak.addEventListener('click', () => {
@@ -51,7 +51,7 @@ longBreak.addEventListener('click', () => {
     minutesField.style.display = 'none';
     minutesShort.style.display = 'none';
     minutesLong.style.display = 'flex';
-    minutesLong.innerHTML = `${thirdInput.value}:00`;
+    minutesLong.innerHTML = `${thirdInput.value < 10 ? '0'+thirdInput.value : thirdInput.value}:00`;
 })
 
 //display settings
@@ -141,7 +141,7 @@ function countFunc () {
                 seconds = 0;
                 minutesField.innerHTML = `${minutes}0:${seconds}0`;
             }
-            minutesField.innerHTML = `${minutes}:${seconds}`;
+            minutesField.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}:${seconds < 10 ? '0'+seconds : seconds}`;
      },1000);
 
     restart.innerHTML = 'pause';
@@ -168,7 +168,9 @@ function countFuncTwo () {
                 secondsTwo = 0;
                 minutesShort.innerHTML = `${minutesTwo}0:${secondsTwo}0`;
             }
-            minutesShort.innerHTML = `${minutesTwo}:${secondsTwo}`;
+
+            minutesShort.innerHTML =  `${minutesTwo < 10 ? '0'+minutesTwo : minutesTwo}:${secondsTwo < 10 ? '0'+secondsTwo : secondsTwo}`;
+
      },1000);
 
     restart.innerHTML = 'pause';
@@ -195,7 +197,7 @@ function countFuncThree () {
                 secondsThree = 0;
                 minutesLong.innerHTML = `${minutesThree}0:${secondsThree}0`;
             }
-            minutesLong.innerHTML = `${minutesThree}:${secondsThree}`;
+            minutesLong.innerHTML = `${minutesThree < 10 ? '0'+minutesThree : minutesThree}:${secondsThree < 10 ? '0'+secondsThree : secondsThree}`;
      },1000);
 
     restart.innerHTML = 'pause';
