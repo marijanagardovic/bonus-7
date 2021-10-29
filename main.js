@@ -24,6 +24,8 @@ let restart = document.querySelector('.restart');
 let restartShort = document.querySelector('.short-restart');
 let restartLong = document.querySelector('.long-restart');
 
+let pause = document.querySelector('.pause');
+
 //buttons switch active
 
 pomodor.addEventListener('click', () => {
@@ -36,6 +38,7 @@ pomodor.addEventListener('click', () => {
     restart.style.display = 'flex';
     restartShort.style.display = 'none';
     restartLong.style.display = 'none';
+    pause.style.display = 'none';
     minutesField.innerHTML = `${firstInput.value < 10 ? '0'+firstInput.value : firstInput.value}:00`;
 })
 
@@ -49,6 +52,7 @@ shortBreak.addEventListener('click', () =>{
     restart.style.display = 'none';
     restartShort.style.display = 'flex';
     restartLong.style.display = 'none';
+    pause.style.display = 'none';
     minutesShort.innerHTML = `${secondInput.value < 10 ? '0'+secondInput.value : secondInput.value}:00`;
 })
 
@@ -62,6 +66,7 @@ longBreak.addEventListener('click', () => {
     restart.style.display = 'none';
     restartShort.style.display = 'none';
     restartLong.style.display = 'flex';
+    pause.style.display = 'none';
     minutesLong.innerHTML = `${thirdInput.value < 10 ? '0'+thirdInput.value : thirdInput.value}:00`;
 })
 
@@ -152,10 +157,11 @@ function countFunc () {
                 seconds = 0;
                 minutesField.innerHTML = `${minutes}0:${seconds}0`;
             }
-            minutesField.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}:${seconds < 10 ? '0'+seconds : seconds}`;
-     },1000);
+            minutesField.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}:${seconds < 10 ? '0'+seconds : seconds}`;   
 
-    restart.innerHTML = 'pause';
+    },1000);
+    restart.style.display = 'none';
+    pause.style.display = 'flex';
 }
 
 restart.addEventListener('click', countFunc);
@@ -180,11 +186,11 @@ function countFuncTwo () {
                 minutesShort.innerHTML = `${minutesTwo}0:${secondsTwo}0`;
             }
 
-            minutesShort.innerHTML =  `${minutesTwo < 10 ? '0'+minutesTwo : minutesTwo}:${secondsTwo < 10 ? '0'+secondsTwo : secondsTwo}`;
+            minutesShort.innerHTML =  `${minutesTwo < 10 ? '0'+minutesTwo : minutesTwo}:${secondsTwo < 10 ? '0'+secondsTwo : secondsTwo}`;      
+    },1000);
+    restartShort.style.display = 'none';
+    pause.style.display = 'flex';
 
-     },1000);
-
-    restartShort.innerHTML = 'pause';
 }
 
 restartShort.addEventListener('click', countFuncTwo);
@@ -209,9 +215,12 @@ function countFuncThree () {
                 minutesLong.innerHTML = `${minutesThree}0:${secondsThree}0`;
             }
             minutesLong.innerHTML = `${minutesThree < 10 ? '0'+minutesThree : minutesThree}:${secondsThree < 10 ? '0'+secondsThree : secondsThree}`;
-     },1000);
+        },1000);
 
-    restartLong.innerHTML = 'pause';
+        pause.style.display = 'flex';
+        restartLong.style.display = 'none';
+
+        /* pause.addEventListener('click', clearInterval(countFuncThree)); */
 }
 
 restartLong.addEventListener('click', countFuncThree);
