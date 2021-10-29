@@ -28,6 +28,7 @@ let pause = document.querySelector('.pause');
 let pauseShort = document.querySelector('.short-pause');
 let pauseLong = document.querySelector('.long-pause');
 
+
 //buttons switch active
 
 pomodor.addEventListener('click', () => {
