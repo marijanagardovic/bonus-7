@@ -381,7 +381,7 @@ input[type=number] {
     padding-left: 0.5em;
 }
 
-.short, .long, .pause, .short-restart, .long-restart {
+.short, .long, .pause, .short-restart, .long-restart, .short-pause, .long-pause {
     display: none;
 }
 
