@@ -120,8 +120,6 @@ applyBtn.addEventListener('click', () => {
     minutesLong.innerHTML = `${thirdInput.value}:00`;
 })
 
-
-
 // changing colors
 
 colorOne.addEventListener('click', () => {
@@ -146,7 +144,7 @@ colorThree.addEventListener('click', () => {
 })
 
 
-//pomodoro counting
+//pomodoro counting button
 
 let minutes = firstInput.value - 1;
 let seconds = 60;
@@ -168,8 +166,9 @@ function countFunc () {
             minutesField.innerHTML = `${minutes < 10 ? '0'+minutes : minutes}:${seconds < 10 ? '0'+seconds : seconds}`;   
 
     },1000);
-    restart.style.display = 'none';
-    pause.style.display = 'flex';
+
+        restart.style.display = 'none';
+        pause.style.display = 'flex';
 }
 
 restart.addEventListener('click', countFunc);
@@ -181,7 +180,7 @@ function stopCount () {
 
 pause.addEventListener('click', stopCount);
 
-//short break 
+//short break buttons
 
 let minutesTwo = secondInput.value - 1;
 let secondsTwo = 60;
@@ -204,8 +203,9 @@ function countFuncTwo () {
 
             minutesShort.innerHTML =  `${minutesTwo < 10 ? '0'+minutesTwo : minutesTwo}:${secondsTwo < 10 ? '0'+secondsTwo : secondsTwo}`;      
     },1000);
-    restartShort.style.display = 'none';
-    pauseShort.style.display = 'flex';
+
+        restartShort.style.display = 'none';
+        pauseShort.style.display = 'flex';
 
 }
 
@@ -219,7 +219,7 @@ function stopCountTwo () {
 pauseShort.addEventListener('click', stopCountTwo);
 
 
-//long break 
+//long break button
 
 let minutesThree = thirdInput.value - 1;
 let secondsThree = 60;

@@ -385,8 +385,6 @@ input[type=number] {
     display: none;
 }
 
-
-
 @media (max-width: 636px) {
     .display-settings {
         width: 400px;
