@@ -128,10 +128,10 @@ let seconds = 60;
 function countFunc () {
     setInterval(() => {
         if(seconds <= 60 && seconds > 00) {
-            seconds = seconds - 1;
+            seconds -= 1;
             }
             if(minutes > 0 && seconds == 0){
-                minutes = minutes - 1;
+                minutes -= 1;
                 seconds = 59;
             }
             if(minutes == 0 && seconds == 0){
@@ -146,5 +146,61 @@ function countFunc () {
 }
 
 restart.addEventListener('click', countFunc);
+
+//short break 
+
+let minutesTwo = secondInput.value - 1;
+let secondsTwo = 60;
+
+function countFuncTwo () {
+    setInterval(() => {
+        if(secondsTwo <= 60 && secondsTwo > 00) {
+            secondsTwo -= 1;
+            }
+            if(minutesTwo > 0 && secondsTwo == 0){
+                minutesTwo -= 1;
+                secondsTwo = 59;
+            }
+            if(minutesTwo == 0 && secondsTwo == 0){
+                minutesTwo = 0;
+                secondsTwo = 0;
+                minutesShort.innerHTML = `${minutesTwo}0:${secondsTwo}0`;
+            }
+            minutesShort.innerHTML = `${minutesTwo}:${secondsTwo}`;
+     },1000);
+
+    restart.innerHTML = 'pause';
+}
+
+shortBreak.addEventListener('click', countFuncTwo);
+
+//long break 
+
+let minutesThree = thirdInput.value - 1;
+let secondsThree = 60;
+
+function countFuncThree () {
+    setInterval(() => {
+        if(secondsThree <= 60 && secondsThree > 00) {
+            secondsThree -= 1;
+            }
+            if(minutesThree > 0 && secondsThree == 0){
+                minutesThree -= 1;
+                secondsThree = 59;
+            }
+            if(minutesThree == 0 && secondsThree == 0){
+                minutesThree = 0;
+                secondsThree = 0;
+                minutesLong.innerHTML = `${minutesThree}0:${secondsThree}0`;
+            }
+            minutesLong.innerHTML = `${minutesThree}:${secondsThree}`;
+     },1000);
+
+    restart.innerHTML = 'pause';
+}
+
+longBreak.addEventListener('click', countFuncThree);
+
+
 
  
