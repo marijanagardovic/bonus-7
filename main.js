@@ -21,6 +21,8 @@ let firstInput = document.querySelector('#input-one');
 let secondInput = document.querySelector('#input-two');
 let thirdInput = document.querySelector('#input-three');
 let restart = document.querySelector('.restart');
+let restartShort = document.querySelector('.short-restart');
+let restartLong = document.querySelector('.long-restart');
 
 //buttons switch active
 
@@ -31,6 +33,9 @@ pomodor.addEventListener('click', () => {
     minutesField.style.display = 'flex';
     minutesShort.style.display = 'none';
     minutesLong.style.display = 'none';
+    restart.style.display = 'flex';
+    restartShort.style.display = 'none';
+    restartLong.style.display = 'none';
     minutesField.innerHTML = `${firstInput.value < 10 ? '0'+firstInput.value : firstInput.value}:00`;
 })
 
@@ -41,6 +46,9 @@ shortBreak.addEventListener('click', () =>{
     minutesField.style.display = 'none';
     minutesShort.style.display = 'flex';
     minutesLong.style.display = 'none';
+    restart.style.display = 'none';
+    restartShort.style.display = 'flex';
+    restartLong.style.display = 'none';
     minutesShort.innerHTML = `${secondInput.value < 10 ? '0'+secondInput.value : secondInput.value}:00`;
 })
 
@@ -51,6 +59,9 @@ longBreak.addEventListener('click', () => {
     minutesField.style.display = 'none';
     minutesShort.style.display = 'none';
     minutesLong.style.display = 'flex';
+    restart.style.display = 'none';
+    restartShort.style.display = 'none';
+    restartLong.style.display = 'flex';
     minutesLong.innerHTML = `${thirdInput.value < 10 ? '0'+thirdInput.value : thirdInput.value}:00`;
 })
 
@@ -173,10 +184,10 @@ function countFuncTwo () {
 
      },1000);
 
-    restart.innerHTML = 'pause';
+    restartShort.innerHTML = 'pause';
 }
 
-shortBreak.addEventListener('click', countFuncTwo);
+restartShort.addEventListener('click', countFuncTwo);
 
 //long break 
 
@@ -200,10 +211,10 @@ function countFuncThree () {
             minutesLong.innerHTML = `${minutesThree < 10 ? '0'+minutesThree : minutesThree}:${secondsThree < 10 ? '0'+secondsThree : secondsThree}`;
      },1000);
 
-    restart.innerHTML = 'pause';
+    restartLong.innerHTML = 'pause';
 }
 
-longBreak.addEventListener('click', countFuncThree);
+restartLong.addEventListener('click', countFuncThree);
 
 
 
