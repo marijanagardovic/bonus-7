@@ -25,6 +25,8 @@ let restartShort = document.querySelector('.short-restart');
 let restartLong = document.querySelector('.long-restart');
 
 let pause = document.querySelector('.pause');
+let pauseShort = document.querySelector('.short-pause');
+let pauseLong = document.querySelector('.long-pause');
 
 //buttons switch active
 
@@ -39,6 +41,8 @@ pomodor.addEventListener('click', () => {
     restartShort.style.display = 'none';
     restartLong.style.display = 'none';
     pause.style.display = 'none';
+    pauseShort.style.display = 'none';
+    pauseLong.style.display = 'none';
     minutesField.innerHTML = `${firstInput.value < 10 ? '0'+firstInput.value : firstInput.value}:00`;
 })
 
@@ -53,6 +57,8 @@ shortBreak.addEventListener('click', () =>{
     restartShort.style.display = 'flex';
     restartLong.style.display = 'none';
     pause.style.display = 'none';
+    pauseShort.style.display = 'none';
+    pauseLong.style.display = 'none';
     minutesShort.innerHTML = `${secondInput.value < 10 ? '0'+secondInput.value : secondInput.value}:00`;
 })
 
@@ -67,6 +73,8 @@ longBreak.addEventListener('click', () => {
     restartShort.style.display = 'none';
     restartLong.style.display = 'flex';
     pause.style.display = 'none';
+    pauseShort.style.display = 'none';
+    pauseLong.style.display = 'none';
     minutesLong.innerHTML = `${thirdInput.value < 10 ? '0'+thirdInput.value : thirdInput.value}:00`;
 })
 
@@ -142,9 +150,9 @@ colorThree.addEventListener('click', () => {
 
 let minutes = firstInput.value - 1;
 let seconds = 60;
-
+let clear;
 function countFunc () {
-    setInterval(() => {
+    clear = setInterval(() => {
         if(seconds <= 60 && seconds > 00) {
             seconds -= 1;
             }
@@ -165,14 +173,22 @@ function countFunc () {
 }
 
 restart.addEventListener('click', countFunc);
+function stopCount () {
+    clearInterval(clear);
+    restart.style.display = 'flex';
+    pause.style.display = 'none';
+}
+
+pause.addEventListener('click', stopCount);
 
 //short break 
 
 let minutesTwo = secondInput.value - 1;
 let secondsTwo = 60;
+let clearTwo;
 
 function countFuncTwo () {
-    setInterval(() => {
+    clearTwo = setInterval(() => {
         if(secondsTwo <= 60 && secondsTwo > 00) {
             secondsTwo -= 1;
             }
@@ -189,19 +205,28 @@ function countFuncTwo () {
             minutesShort.innerHTML =  `${minutesTwo < 10 ? '0'+minutesTwo : minutesTwo}:${secondsTwo < 10 ? '0'+secondsTwo : secondsTwo}`;      
     },1000);
     restartShort.style.display = 'none';
-    pause.style.display = 'flex';
+    pauseShort.style.display = 'flex';
 
 }
 
 restartShort.addEventListener('click', countFuncTwo);
+function stopCountTwo () {
+    clearInterval(clearTwo);
+    restartShort.style.display = 'flex';
+    pauseShort.style.display = 'none';
+}
+
+pauseShort.addEventListener('click', stopCountTwo);
+
 
 //long break 
 
 let minutesThree = thirdInput.value - 1;
 let secondsThree = 60;
+let clearThree;
 
 function countFuncThree () {
-    setInterval(() => {
+    clearThree = setInterval(() => {
         if(secondsThree <= 60 && secondsThree > 00) {
             secondsThree -= 1;
             }
@@ -217,13 +242,18 @@ function countFuncThree () {
             minutesLong.innerHTML = `${minutesThree < 10 ? '0'+minutesThree : minutesThree}:${secondsThree < 10 ? '0'+secondsThree : secondsThree}`;
         },1000);
 
-        pause.style.display = 'flex';
+        pauseLong.style.display = 'flex';
         restartLong.style.display = 'none';
-
-        /* pause.addEventListener('click', clearInterval(countFuncThree)); */
+}
+ 
+restartLong.addEventListener('click', countFuncThree);
+function stopCountThree () {
+    clearInterval(clearThree);
+    restartLong.style.display = 'flex';
+    pauseLong.style.display = 'none';
 }
 
-restartLong.addEventListener('click', countFuncThree);
+pauseLong.addEventListener('click', stopCountThree);
 
 
 
