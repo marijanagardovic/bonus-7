@@ -92,6 +92,8 @@ fontThree.addEventListener('click', () => {
 applyBtn.addEventListener('click', () => {
     displaySettings.style.display = 'none';
     minutesField.innerHTML = `${firstInput.value}:00`;
+    minutesShort.innerHTML = `${secondInput.value}:00`;
+    minutesLong.innerHTML = `${thirdInput.value}:00`;
 })
 
 
