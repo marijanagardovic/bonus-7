@@ -13,8 +13,11 @@ const colorTwo = document.querySelector('.blue');
 const colorThree = document.querySelector('.purple');
 const applyBtn = document.querySelector('.apply');
 
-let firstInput = document.querySelector('#input-one');
 const minutesField = document.querySelector('.minutes');
+const minutesShort = document.querySelector('.short');
+const minutesLong = document.querySelector('.long');
+
+let firstInput = document.querySelector('#input-one');
 let secondInput = document.querySelector('#input-two');
 let thirdInput = document.querySelector('#input-three');
 let restart = document.querySelector('.restart');
@@ -25,6 +28,9 @@ pomodor.addEventListener('click', () => {
     shortBreak.classList.remove('active');
     pomodor.classList.add('active');
     longBreak.classList.remove('active');
+    minutesField.style.display = 'flex';
+    minutesShort.style.display = 'none';
+    minutesLong.style.display = 'none';
     minutesField.innerHTML = `${firstInput.value}:00`;
 })
 
@@ -32,14 +38,20 @@ shortBreak.addEventListener('click', () =>{
     shortBreak.classList.add('active');
     pomodor.classList.remove('active');
     longBreak.classList.remove('active');
-    minutesField.innerHTML = `${secondInput.value}:00`;
+    minutesField.style.display = 'none';
+    minutesShort.style.display = 'flex';
+    minutesLong.style.display = 'none';
+    minutesShort.innerHTML = `${secondInput.value}:00`;
 })
 
 longBreak.addEventListener('click', () => {
     shortBreak.classList.remove('active');
     pomodor.classList.remove('active');
     longBreak.classList.add('active');
-    minutesField.innerHTML = `${thirdInput.value}:00`;
+    minutesField.style.display = 'none';
+    minutesShort.style.display = 'none';
+    minutesLong.style.display = 'flex';
+    minutesLong.innerHTML = `${thirdInput.value}:00`;
 })
 
 //display settings
@@ -127,12 +139,12 @@ function countFunc () {
                 seconds = 0;
                 minutesField.innerHTML = `${minutes}0:${seconds}0`;
             }
-        
             minutesField.innerHTML = `${minutes}:${seconds}`;
-    },1500);
+     },1000);
 
     restart.innerHTML = 'pause';
 }
 
 restart.addEventListener('click', countFunc);
 
+ 

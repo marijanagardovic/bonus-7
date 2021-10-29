@@ -377,6 +377,10 @@ input[type=number] {
     padding-left: 0.5em;
 }
 
+.short, .long {
+    display: none;
+}
+
 
 @media (max-width: 636px) {
     .display-settings {
