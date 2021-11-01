@@ -206,10 +206,10 @@ thirdArrowDown.addEventListener('click', () => {
 
 //pomodoro counting button
 
-let minutes = firstInput.value - 1;
-let seconds = 60;
 let clear;
 function countFunc () {
+    let minutes = firstInput.value - 1;
+    let seconds = 60;
     clear = setInterval(() => {
         if(seconds <= 60 && seconds > 00) {
             seconds -= 1;
@@ -242,11 +242,11 @@ pause.addEventListener('click', stopCount);
 
 //short break buttons
 
-let minutesTwo = secondInput.value - 1;
-let secondsTwo = 60;
 let clearTwo;
 
 function countFuncTwo () {
+    let minutesTwo = secondInput.value - 1;
+    let secondsTwo = 60;
     clearTwo = setInterval(() => {
         if(secondsTwo <= 60 && secondsTwo > 00) {
             secondsTwo -= 1;
@@ -281,11 +281,11 @@ pauseShort.addEventListener('click', stopCountTwo);
 
 //long break button
 
-let minutesThree = thirdInput.value - 1;
-let secondsThree = 60;
 let clearThree;
 
 function countFuncThree () {
+    let minutesThree = thirdInput.value - 1;
+    let secondsThree = 60;
     clearThree = setInterval(() => {
         if(secondsThree <= 60 && secondsThree > 00) {
             secondsThree -= 1;
