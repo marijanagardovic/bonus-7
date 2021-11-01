@@ -28,6 +28,13 @@ let pause = document.querySelector('.pause');
 let pauseShort = document.querySelector('.short-pause');
 let pauseLong = document.querySelector('.long-pause');
 
+let firstArrowUp = document.querySelector('.first-up');
+let firstArrowDown = document.querySelector('.first-down');
+let secondArrowUp = document.querySelector('.second-up');
+let secondArrowDown = document.querySelector('.second-down');
+let thirdArrowUp = document.querySelector('.third-up');
+let thirdArrowDown = document.querySelector('.third-down');
+
 
 //buttons switch active
 
@@ -144,6 +151,58 @@ colorThree.addEventListener('click', () => {
     colorThree.innerHTML = '✓';
 })
 
+//arrows inputs
+
+firstArrowUp.addEventListener('click', () => {
+    if(firstInput.value < 99) {
+        firstInput.value++;
+    }
+    else {
+        firstInput.value = 99;
+    }
+})
+
+firstArrowDown.addEventListener('click', () => {
+    if(firstInput.value > 0) {
+        firstInput.value--;
+    } else {
+        firstInput.value = 0;
+    }
+})
+
+secondArrowUp.addEventListener('click', () => {
+    if(secondInput.value < 30) {
+        secondInput.value++ ;
+    }
+    else {
+        secondInput.value = 30;
+    }
+})
+
+secondArrowDown.addEventListener('click', () => {
+    if(secondInput.value > 0) {
+        secondInput.value--;
+    } else {
+        secondInput.value = 0;
+    }
+})
+
+thirdArrowUp.addEventListener('click', () => {
+    if(thirdInput.value < 50) {
+        thirdInput.value++;
+    }
+    else {
+        thirdInput.value = 50;
+    }
+})
+
+thirdArrowDown.addEventListener('click', () => {
+    if(thirdInput.value > 0) {
+        thirdInput.value--;
+    } else {
+        thirdInput.value = 0;
+    }
+})
 
 //pomodoro counting button
 
