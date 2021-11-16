@@ -119,15 +119,6 @@ fontThree.addEventListener('click', () => {
     body.style.fontFamily = 'Space Mono';
 })
 
-//button apply
-
-applyBtn.addEventListener('click', () => {
-    displaySettings.style.display = 'none';
-    minutesField.innerHTML = `${firstInput.value}:00`;
-    minutesShort.innerHTML = `${secondInput.value}:00`;
-    minutesLong.innerHTML = `${thirdInput.value}:00`;
-})
-
 // changing colors
 
 colorOne.addEventListener('click', () => {
@@ -207,9 +198,10 @@ thirdArrowDown.addEventListener('click', () => {
 //pomodoro counting button
 
 let clear;
+var minutes = firstInput.value - 1;
+let seconds = 60;
+
 function countFunc () {
-    let minutes = firstInput.value - 1;
-    let seconds = 60;
     clear = setInterval(() => {
         if(seconds <= 60 && seconds > 00) {
             seconds -= 1;
@@ -243,10 +235,11 @@ pause.addEventListener('click', stopCount);
 //short break buttons
 
 let clearTwo;
+let minutesTwo = secondInput.value - 1;
+let secondsTwo = 60;
 
 function countFuncTwo () {
-    let minutesTwo = secondInput.value - 1;
-    let secondsTwo = 60;
+
     clearTwo = setInterval(() => {
         if(secondsTwo <= 60 && secondsTwo > 00) {
             secondsTwo -= 1;
@@ -282,10 +275,10 @@ pauseShort.addEventListener('click', stopCountTwo);
 //long break button
 
 let clearThree;
+let minutesThree = thirdInput.value - 1;
+let secondsThree = 60;
 
 function countFuncThree () {
-    let minutesThree = thirdInput.value - 1;
-    let secondsThree = 60;
     clearThree = setInterval(() => {
         if(secondsThree <= 60 && secondsThree > 00) {
             secondsThree -= 1;
@@ -315,6 +308,17 @@ function stopCountThree () {
 
 pauseLong.addEventListener('click', stopCountThree);
 
+
+//button apply
+applyBtn.addEventListener('click', () => {
+    displaySettings.style.display = 'none';
+    minutesField.innerHTML = `${firstInput.value}:00`;
+    minutesShort.innerHTML = `${secondInput.value}:00`;
+    minutesLong.innerHTML = `${thirdInput.value}:00`;
+    minutes = firstInput.value - 1;
+    minutesTwo = secondInput.value - 1;
+    minutesThree = thirdInput.value - 1;
+})
 
 
  
